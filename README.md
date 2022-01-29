@@ -1,4 +1,4 @@
-# DOA-Estimation-Algorithms1
+# DOA-Estimation-Algorithms
 Mathematical implementation, simulations and performances of different direction of arrival algorithms such as MUSIC, ROOT MUSIC, ESPRIT and MVDR.
 ### MUSIC, ROOT MUSIC, ESPRIT, MVDR results for two signals comming from 30 & 40 degrees:
 <p align="center">
