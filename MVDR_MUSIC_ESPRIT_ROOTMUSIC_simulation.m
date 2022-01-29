@@ -18,25 +18,25 @@ broadside_angle = az2broadside(angs(1,:),angs(2,:))
 mvdrspatialspect = phased.MVDREstimator('SensorArray',ula,...
         'OperatingFrequency',fc,'ScanAngles',-90:90,...
         'DOAOutputPort',true,'NumSignals',2);
-[~,DOA_MVDR] = mvdrspatialspect(signal)
+[~,DOA_MVDR_estimation] = mvdrspatialspect(signal)
 
 musicspatialspect = phased.MUSICEstimator('SensorArray',ula,...
         'OperatingFrequency',fc,'ScanAngles',-90:90,...
         'DOAOutputPort',true,'NumSignalsSource','Property','NumSignals',2);
-[~,DOA_MUSIC] = musicspatialspect(signal) 
+[~,DOA_MUSIC_estimation] = musicspatialspect(signal) 
 
 espritspatialspect = phased.ESPRITEstimator('SensorArray',ula,...
        'OperatingFrequency',fc,'NumSignalsSource','Property',...
        'NumSignals',2);
      
 yesprit = espritspatialspect(signal);
-DOA_ESPRIT = yesprit(1:2)
+DOA_ESPRIT_estimation = yesprit(1:2)
 
 rootmusicspatialspect = phased.RootMUSICEstimator('SensorArray',ula,...
      'OperatingFrequency',fc,'NumSignalsSource','Property',...
      'NumSignals',2);
 yrootmusic = rootmusicspatialspect(signal);
-DOA_ROOT_MUSIC = yrootmusic
+DOA_ROOT_MUSIC_estimation = yrootmusic
 
 ymvdr = mvdrspatialspect(signal);
 ymusic = musicspatialspect(signal);
